@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embedding-tuning"
+version = "0.1.0"
+description = "Vision embedding tuning"
+requires-python = ">=3.8"
+authors = [
+    {name = "Taras Sereda", email = "taras@gimletlabs.ai"},
+]
+dependencies = [
+    "numba==0.59.0",
+    "pycocotools==2.0.7",
+    "tensorboard==2.15.1",
+    "tqdm==4.66.4",
+    "open_clip_torch==2.30.0",
+    "torchmetrics==1.6.1",
+    "accelerate==1.6.0",
+    "datasets==3.5.0",
+    "torch==2.6.0",
+    "torchvision==0.21.0",
+    "numpy==1.26.2",
+    "supervision==0.17.1",
+    "Pillow==10.3.0",
+    "orjson==3.10.18",
+    "transformers==4.51.3",
+    "lightning==2.5.1.post0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+lint.select = ["E", "F", "B", "I", "N", "UP", "PL", "RUF"]
+lint.ignore = []
+lint.isort.known-first-party = ["embedding_tuning"]
